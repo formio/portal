@@ -3,15 +3,23 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormioGrid } from '@formio/angular/grid';
 import { FormManagerModule, FormManagerRoutes, FormManagerService, FormManagerConfig } from '@formio/angular/manager';
+import { FormIndexComponent } from './index/index.component';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FormIndexComponent,
+    FormComponent
+  ],
   imports: [
     CommonModule,
     FormioGrid,
     FormManagerModule,
-    RouterModule.forChild(FormManagerRoutes())
+    RouterModule.forChild(FormManagerRoutes({
+      formIndex: FormIndexComponent,
+      form: FormComponent
+    }))
   ],
   providers: [
     FormManagerService,
