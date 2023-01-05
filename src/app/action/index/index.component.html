@@ -2,30 +2,16 @@
     <div class="card-header">
         Actions
     </div>
-    <div class="card-body">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Operations</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let action of actions | async">
-                    <th scope="row">{{ action.title }}</th>
-                    <td>
-                        <a class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a>
-                        <a class="btn btn-light"><i class="bi bi-trash"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let action of actions | async"><a routerLink="{{ action._id }}/edit">{{ action.title }}</a></li>
+    </ul>
     <div class="card-footer form-inline">
         <select [(ngModel)]="selectedAction" class="w-25 custom-select align-middle mr-2">
             <option [ngValue]="''" selected>Select an Action</option>
-            <option *ngFor="let availableAction of availableActions | async" [ngValue]="availableAction.name">{{ availableAction.title }}</option>
+            <option *ngFor="let availableAction of availableActions | async" [ngValue]="availableAction.name">{{
+                availableAction.title }}</option>
         </select>
-        <button class="btn btn-primary align-middle" (click)="createAction()"><i class="bi bi-plus-lg"></i> Add Action</button>
+        <button class="btn btn-primary align-middle" (click)="createAction()"><i class="bi bi-plus-lg"></i> Add
+            Action</button>
     </div>
 </div>

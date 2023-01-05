@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { ActionIndexComponent } from './index/index.component';
 import { ActionCreateComponent } from './create/create.component';
 import { ActionComponent } from './action/action.component';
-import { ActionViewComponent } from './view/view.component';
 import { ActionEditComponent } from './edit/edit.component';
 import { ActionDeleteComponent } from './delete/delete.component';
 
@@ -21,12 +20,8 @@ const ActionRoutes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'view',
+                redirectTo: 'edit',
                 pathMatch: 'full'
-            },
-            {
-                path: 'view',
-                component: ActionViewComponent
             },
             {
                 path: 'edit',

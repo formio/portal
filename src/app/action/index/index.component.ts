@@ -16,13 +16,11 @@ export class ActionIndexComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.managerService);
     this.availableActions = this.managerService.formio.makeRequest('actions', `${this.managerService.formio.formUrl}/actions`);
     this.actions = this.managerService.formio.loadActions();
   }
 
   createAction() {
-    console.log(this.selectedAction);
     this.router.navigate(['create', this.selectedAction], { relativeTo: this.route })
   }
 }
