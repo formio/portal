@@ -1,1 +1,1 @@
-<formio [form]="settingsForm | async"></formio>
+<formio [form]="settingsForm | async" [submission]="actionDefaults | async" (submit)="onSubmit()"></formio>

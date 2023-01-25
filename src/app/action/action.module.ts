@@ -9,6 +9,8 @@ import { ActionCreateComponent } from './create/create.component';
 import { ActionEditComponent } from './edit/edit.component';
 import { ActionDeleteComponent } from './delete/delete.component';
 import { ActionComponent } from './action/action.component';
+import { ActionService } from './action.service';
+import { UtilsModule } from '../utils/utils.module';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { ActionComponent } from './action/action.component';
     CommonModule,
     FormsModule,
     FormioModule,
+    UtilsModule,
     RouterModule.forChild(ActionRoutes)
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ActionService]
 })
 export class ActionModule { }

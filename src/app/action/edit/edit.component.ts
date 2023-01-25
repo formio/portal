@@ -1,8 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Formio } from '@formio/angular';
 import { FormManagerService } from '@formio/angular/manager';
 import { Subject, Observable } from 'rxjs';
+import { ActionService } from '../action.service';
 
 @Component({
   selector: 'app-edit',
@@ -15,16 +15,19 @@ export class ActionEditComponent implements AfterViewInit {
   action: any;
   actionSub: any;
   constructor(
+    public actionService: ActionService,
     public managerService: FormManagerService,
     public route: ActivatedRoute
-  ) {}
+  ) {
+    this.actionService.actionInfo.subscribe(async (action: any) => {
+      const actionSettings = await this.managerService.formio.makeRequest(`actions/${action.name}`, `${this.managerService.formio.formUrl}/actions/${action.name}`);
+      this.actionSub = {data: action};
+      this._settingsForm.next(actionSettings.settingsForm);
+    });
+  }
   ngAfterViewInit(): void {
     this.route.parent.params.subscribe(async (params: any) => {
-      const actionUrl = `${this.managerService.formio.formUrl}/action/${params.id}`;
-      this.action = await (new Formio(actionUrl)).loadAction();
-      const actionSettings = await this.managerService.formio.makeRequest(`actions/${this.action.name}`, `${this.managerService.formio.formUrl}/actions/${this.action.name}`);
-      this.actionSub = {data: this.action};
-      this._settingsForm.next(actionSettings.settingsForm);
+      this.actionService.loadAction(params.id);
     });
   }
 }
