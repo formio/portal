@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormioAuth, FormioAuthRoutes } from '@formio/angular/auth';
 
-
 @NgModule({
   declarations: [
   ],

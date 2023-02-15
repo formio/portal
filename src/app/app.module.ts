@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Formio, FormioAppConfig } from '@formio/angular';
+import { Formio, Templates } from 'formiojs';
+import { FormioAppConfig } from '@formio/angular';
 import { FormioResources } from '@formio/angular/resource';
 import { ResourceFieldsComponent } from './components/ResourceFieldsComponent';
 import { FormioAuthService, FormioAuthConfig } from '@formio/angular/auth';
-import 'jquery';
+Templates.framework = 'bootstrap5';
 import 'bootstrap';
 
 Formio.use({

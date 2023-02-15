@@ -12,8 +12,6 @@ import { ToasterService } from './toaster.service';
   exports: [
     ToasterComponent
   ],
-  providers: [
-    ToasterService
-  ]
+  providers: []
 })
 export class UtilsModule { }
