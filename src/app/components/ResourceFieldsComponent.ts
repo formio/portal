@@ -1,4 +1,4 @@
-import { Formio } from '@formio/angular';
+import { Formio } from 'formiojs';
 const NestedComponent = (Formio as any).Components.components.nested;
 export class ResourceFieldsComponent extends NestedComponent {
   [x: string]: any;

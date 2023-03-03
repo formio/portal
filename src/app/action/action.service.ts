@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Formio, FormioAppConfig } from '@formio/angular';
+import { Formio } from 'formiojs';
+import { FormioAppConfig } from '@formio/angular';
 import { FormManagerService } from '@formio/angular/manager';
 import { Subject, Observable } from 'rxjs';
 
