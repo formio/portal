@@ -23,6 +23,7 @@
     "@formio/contrib": "^1.1.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
+    "bootswatch": "^5.2.3",
     "font-awesome": "4",
     "formiojs": "^4.14.11",
     "ngx-bootstrap": "^10.2.0",

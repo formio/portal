@@ -1,2 +1,9 @@
+
+
+@import "bootswatch/dist/spacelab/variables";
 @import "bootstrap/scss/bootstrap.scss";
+@import "bootswatch/dist/spacelab/bootswatch";
 @import "bootstrap-icons/font/bootstrap-icons.scss";
+.navbar-brand svg {
+    width: 10em;
+}

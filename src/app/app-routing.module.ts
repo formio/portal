@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'resource',
-    loadChildren: () => import('./resource/resource.module').then(m => m.ResourceModule)
+    loadChildren: () => import('./form/form.module').then(m => m.FormModule)
   }
 ];
 
