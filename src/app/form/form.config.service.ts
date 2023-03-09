@@ -7,6 +7,6 @@ export class FormConfigService extends FormManagerConfig {
   constructor(public route: ActivatedRoute) {
     super();
     this.includeSearch = true;
-    (this as any).type = this.route.children.length ? this.route.children[0].routeConfig.path : 'form';
+    this.type = this.route.children.length ? this.route.children[0].routeConfig.path : 'form';
   }
 }

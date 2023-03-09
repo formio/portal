@@ -1,11 +1,14 @@
 <div class="card bg-light mb-3">
-    <div class="card-body">
+    <div *ngIf="config.type === 'form'"class="card-body">
         Forms serve as a composite input interface for Resources as well as free-form user input. Example: Login Form, Contact Form, etc.
+    </div>
+    <div *ngIf="config.type === 'resource'"class="card-body">
+      Resources are the objects within your Project. Example: User, Company, Vehicle, etc.
     </div>
   </div>
 <div role="search" class="input-group mb-3" *ngIf="config.includeSearch">
     <input #search type="text" (keyup)="onSearch()" class="form-control" placeholder="Search Forms" aria-label="Search Forms" aria-describedby="button-search">
-    <span *ngIf="search && search !== ''" class="form-clear input-group-addon" (click)="clearSearch()"><span class="fa fa-times bi bi-x"></span></span>
+    <span *ngIf="search && search !== ''" class="form-clear input-group-addon d-flex align-items-center" (click)="clearSearch()"><span class="fa fa-times bi bi-x" style="cursor:pointer"></span></span>
 </div>
 <formio-grid *ngIf="service.ready" [formio]="service.formio" [gridType]="'form'" [query]="gridQuery"
     [isActionAllowed]="service.actionAllowed" (rowAction)="onAction($event)" (rowSelect)="onSelect($event)"
