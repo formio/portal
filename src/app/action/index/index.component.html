@@ -3,15 +3,19 @@
         Actions
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let action of actions | async"><a routerLink="{{ action._id }}/edit">{{ action.title }}</a></li>
+        <li class="list-group-item d-flex justify-content-between" *ngFor="let action of actions | async">
+          <a class="text-decoration-none" routerLink="{{ action._id }}/edit">{{ action.title }}</a> <button routerLink="{{ action._id}}/delete" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+        </li>
     </ul>
     <div class="card-footer form-inline">
-        <select [(ngModel)]="selectedAction" class="w-25 custom-select align-middle mr-2">
+      <div class="col-4 d-flex justify-content-between">
+        <select [(ngModel)]="selectedAction" class="custom-select align-middle ml-2 form-select">
             <option [ngValue]="''" selected>Select an Action</option>
             <option *ngFor="let availableAction of availableActions | async" [ngValue]="availableAction.name">{{
                 availableAction.title }}</option>
         </select>
-        <button class="btn btn-primary align-middle" (click)="createAction()"><i class="bi bi-plus-lg"></i> Add
+        <button class="btn btn-sm btn-primary form-control ms-2" (click)="createAction()"><i class="bi bi-plus-lg"></i> Add
             Action</button>
+      </div>
     </div>
 </div>

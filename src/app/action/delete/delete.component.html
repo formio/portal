@@ -1,6 +1,13 @@
 <formio-alerts [alerts]="alerts"></formio-alerts>
-<h3>Are you sure you wish to delete this action?</h3>
+<div class="col-12">
+  <div class="col-4 mx-3">
+    <div class="card p-3">
+
+      <h3>Are you sure you wish to delete this action?</h3>
 <div class="btn-toolbar">
   <button type="button" (click)="onDelete()" class="btn btn-danger" style="margin-right: 10px;">Yes</button>
   <button type="button" (click)="onCancel()" class="btn btn-default">No</button>
+</div>
+    </div>
+  </div>
 </div>
