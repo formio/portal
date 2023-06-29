@@ -7,5 +7,7 @@ import { FormManagerIndexComponent } from '@formio/angular/manager';
   styleUrls: ['./index.component.scss']
 })
 export class FormIndexComponent extends FormManagerIndexComponent {
-
+  get configType() {
+    return (this.config as any).type;
+  }
 }

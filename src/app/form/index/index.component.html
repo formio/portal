@@ -1,8 +1,8 @@
 <div class="card bg-light mb-3">
-    <div *ngIf="config.type === 'form'"class="card-body">
+    <div *ngIf="configType === 'form'"class="card-body">
         Forms serve as a composite input interface for Resources as well as free-form user input. Example: Login Form, Contact Form, etc.
     </div>
-    <div *ngIf="config.type === 'resource'"class="card-body">
+    <div *ngIf="configType === 'resource'"class="card-body">
       Resources are the objects within your Project. Example: User, Company, Vehicle, etc.
     </div>
   </div>

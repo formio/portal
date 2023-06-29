@@ -4,6 +4,7 @@ import { FormManagerConfig } from '@formio/angular/manager';
 
 @Injectable()
 export class FormConfigService extends FormManagerConfig {
+  public override type: string;
   constructor(public route: ActivatedRoute) {
     super();
     this.includeSearch = true;
